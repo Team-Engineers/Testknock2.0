@@ -3,9 +3,9 @@ import img from "../../assets/images/Home/whrv.png"
 const HomeAbout = () => {
     return (
         <div>
-            <div className='grid grid-cols-2 gap-10 px-8'>
-                <div className='border-[#6b6ba797] border rounded-xl'>
-                    <img className='p-2  rounded-xl' src={img} alt="" />
+            <div className='grid grid-cols-2  max-w-[1480px]  mx-auto gap-10 px-8'>
+                <div className='border-[#6b6ba797]   border rounded-xl'>
+                    <img className='p-2 w-[50vw] h-[400px] object-cover  rounded-xl' src={img} alt="" />
                 </div>
                 <div className='text-white'>
                     <h1 className='text-[#B47BFC] mb-10'>WHO ARE WE?</h1>

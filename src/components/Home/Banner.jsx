@@ -2,7 +2,7 @@ import React from 'react'
 
 const Banner = () => {
   return (
-    <div className='min-h-[80vh] pb-10 flex justify-center items-center relative overflow-hidden'>      
+    <div className='min-h-[500px] pb-10 flex justify-center items-center relative overflow-hidden'>      
    
       <div className='text-white text-center space-y-6 relative z-10'>
         <h1 className='border-[#7E3D61] rounded-md p-1 px-4 w-fit border mx-auto'>

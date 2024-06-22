@@ -7,7 +7,7 @@ import circle from "../../assets/images/Home/Services/circle.svg"
 
 const ServicesOffer = () => {
     return (
-        <div className='my-10'>
+        <div className='my-20'>
             <div>
                 <h1 className="text-6xl  text-white font-bold text-center  [font-family:'Houschka']">The Service We Provide <br /> For You</h1>
             </div>
