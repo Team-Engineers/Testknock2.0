@@ -5,7 +5,7 @@ import { BsArrowUpRight } from "react-icons/bs";
 const OurVision = () => {
     return (
         <div>
-            <div className='grid max-w-[1480px] mx-auto mb-20  grid-cols-2 gap-5 px-5'>
+            <div className='grid max-w-[1480px] pt-10 mx-auto mb-20  grid-cols-2 gap-5 px-5'>
                 <div className='text-white '>
                     <div className='relative '>
                         <img className='absolute z-[0] w-[50vw] 2xl:h-[520px] lg:h-[560px] xl:h-[520px]' src={background} alt="" />
