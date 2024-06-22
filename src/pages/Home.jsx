@@ -9,7 +9,8 @@ import Testimonials from '../components/Home/Testimonials'
 const Home = () => {
   return (
     <div>
-        <Banner />
+        <Banner /> 
+        
         <HomeAbout />
       <ServicesOffer />
       <Portfolio />
