@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={` top-0 left-0 bg-transparent font-medium w-full z-50 flex lg:h-[80px] h-[70px] items-center justify-between px-10 py-2 logo-header  transition-all duration-300 ease-in-out`}
+      className={` top-0 max-w-[1500px] mx-auto left-0 bg-transparent font-medium w-full z-50 flex lg:h-[80px] h-[70px] items-center justify-between pl-3 md:px-10 py-2 logo-header  transition-all duration-300 ease-in-out`}
     >
       <Link to="/">
         <div className="flex justify-center items-center">
@@ -50,54 +50,48 @@ const Navbar = () => {
         <nav className="flex text-lg space-x-10 px-10">
           <Link
             to="/"
-            className={`text-white whitespace-nowrap transition-all duration-200 hover:text-[#B47BFC] ${
-                location.pathname === "/" && !isScrolled ? "text-black" : ""
-            }`}
+            className={` whitespace-nowrap transition-all duration-200 hover:text-[#B47BFC] ${location.pathname === "/" && !isScrolled ? "text-[#B47BFC]" : "text-white"
+              }`}
           >
             Home
           </Link>
           <Link
             to="/services"
-            className={`text-white whitespace-nowrap transition-all duration-200  hover:text-[#B47BFC] ${
-              location.pathname === "/" && !isScrolled ? "text-black" : ""
-            }`}
+            className={`whitespace-nowrap transition-all duration-200  hover:text-[#B47BFC] ${location.pathname === "/services" && !isScrolled ? "text-[#B47BFC]" : "text-white"
+              }`}
           >
             Services
           </Link>
           <Link
             to="/our-products"
-            className={`text-white whitespace-nowrap transition-all duration-200  hover:text-[#B47BFC] ${
-                location.pathname === "/" && !isScrolled ? "text-black" : ""
-            }`}
+            className={`whitespace-nowrap transition-all duration-200  hover:text-[#B47BFC] ${location.pathname === "/our-products" && !isScrolled ? "text-[#B47BFC]" : "text-white"
+              }`}
           >
             Our Products
           </Link>
           <Link
             to="/our-team"
-            className={`text-white whitespace-nowrap transition-all duration-200 hover:text-[#B47BFC] ${
-                location.pathname === "/" && !isScrolled ? "text-black" : ""
-            }`}
+            className={`whitespace-nowrap transition-all duration-200 hover:text-[#B47BFC] ${location.pathname === "/our-team" && !isScrolled ? "text-[#B47BFC]" : "text-white"
+              }`}
           >
             Our Team
           </Link>
           <Link
             to="/about"
-            className={`text-white whitespace-nowrap  transition-all duration-200 hover:text-[#B47BFC] ${
-                location.pathname === "/" && !isScrolled ? "text-black" : ""
-            }`}
+            className={`whitespace-nowrap  transition-all duration-200 hover:text-[#B47BFC] ${location.pathname === "/about" && !isScrolled ? "text-[#B47BFC]" : "text-white"
+              }`}
           >
             About us
           </Link>
         </nav>
       </div>
       <Link
-            to="/contact"
-            className={`text-white border-white transition-all duration-200 border-2 px-5 p-1 rounded-[8px]  whitespace-nowrap hover:scale-105 ${
-              location.pathname === "/" && !isScrolled ? "text-black" : ""
-            }`}
-          >
-            Contact Us
-          </Link>
+        to="/contact"
+        className={`max-md:hidden text-white hover:bg-gradient-to-r from-[#B47BFC] via-[#F181C7] to-[#FFA38C] border-white transition-all duration-200 border-2 px-5 p-1 rounded-[8px]  whitespace-nowrap hover:scale-105 ${location.pathname === "/contact" && !isScrolled ? "bg-gradient-to-r from-[#B47BFC] via-[#F181C7] to-[#FFA38C]" : ""
+          }`}
+      >
+        Contact Us
+      </Link>
       <div className="md:hidden flex ">
         <BurgerAndMenu />
       </div>

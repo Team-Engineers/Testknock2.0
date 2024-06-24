@@ -11,7 +11,7 @@ const OurVision = () => {
                         <img className='absolute z-[0] w-[50vw] 2xl:h-[520px] lg:h-[560px] xl:h-[520px]' src={background} alt="" />
                     </div>
                     <div className='relative p-6  flex flex-col justify-end 2xl:h-[520px] lg:h-[560px] xl:h-[520px] z-[1]'>
-                        <div className='h-[60px] font-bold text-2xl flex justify-center items-center absolute bg-[#C77DEE] rounded-full right-0 top-0 w-[60px]'>
+                        <div className='h-[60px] font-bold text-2xl m-1 flex justify-center items-center absolute bg-[#C77DEE] rounded-full right-0 top-0 w-[60px]'>
                             <h1 className=''><BsArrowUpRight /></h1>
                         </div>
                         <h1 className='text-[#BD5D90] font-bold mb-6'>
