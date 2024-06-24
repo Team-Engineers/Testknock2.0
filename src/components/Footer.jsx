@@ -5,10 +5,10 @@ import Logo from "../assets/images/logo.svg";
 const Footer = () => {
   const updatedDate = new Date().getFullYear();
   return (
-    <footer className=" overflow-hidden w-full ">
-      <div className="">
-        <div className="grid border-t-[0.1px] border-b-[0.1px] border-[#ef81c86f] px-8 p-8  grid-cols-1 font-medium  gap-8 lg:grid-cols-3">
-          <div className="grid  justify-center ">
+    <footer className=" overflow-hidden   w-full ">
+      <div className="border-t-[0.1px] border-b-[0.1px] border-[#ef81c86f]">
+        <div className="grid  px-8 p-8 max-w-[1500px] mx-auto  grid-cols-1 font-medium  gap-8 lg:grid-cols-3">
+          <div className="grid  justify-center">
             <div className=" flex justify-center gap-6 lg:justify-start text-[#063970] ">
               <NavLink to="/">
                 <div className="flex items-center">
@@ -155,7 +155,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className=" my-5  px-[50px] ">
+        </div>
+        <div className=" my-5 max-w-[1500px] mx-auto px-[50px] ">
           <div className="text-center sm:flex justify-between sm:text-left">
             <p className="flex sm:flex-row flex-col  gap-[10px] max-md:justify-center  md:text-[100%] text-[90%] ">
               <NavLink
@@ -184,7 +185,7 @@ const Footer = () => {
             </p>
           </div>
         </div>
-      </div>
+     
     </footer>
   );
 };

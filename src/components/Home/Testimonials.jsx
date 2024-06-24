@@ -71,7 +71,7 @@ const Testimonials = ({ style }) => {
     }, []);
 
     return (
-        <div className='w-full mb-10'>
+        <div className='w-full max-w-[1600px] mx-auto mb-10'>
             <style jsx>{`
         .custom-pagination .swiper-pagination-bullet {
           background-color: #B47BFC;
@@ -79,13 +79,10 @@ const Testimonials = ({ style }) => {
           width: 10px; 
           height: 10px; 
           margin: 0 5px;
-
         }
-
         .custom-pagination .swiper-pagination-bullet-active {
           background-color: #C77DEE;
           opacity: 1;
-
         }
       `}</style>
             <div className='text-center'>

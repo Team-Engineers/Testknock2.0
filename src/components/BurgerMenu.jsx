@@ -56,7 +56,6 @@ const StyledMenu = styled.nav`
 
   a {
     text-align: center;
-    font-size: 1rem;
     text-transform: uppercase;
     padding: 1rem 0;
     font-weight: bold;
@@ -64,7 +63,6 @@ const StyledMenu = styled.nav`
     text-decoration: none;
     transition: color 0.3s linear;
     @media (max-width: 576px) {
-      font-size: 1rem;
       text-align: center;
     }
 
@@ -91,7 +89,7 @@ const BurgerAndMenu = () => {
         <div />
         <div />
       </StyledBurger>
-      <StyledMenu className="max-lg:w-full" open={open}>
+      <StyledMenu className="max-lg:w-full text-2xl space-y-6" open={open}>
         <NavLink to="/" onClick={handleMenuClick}>
             Home
           </NavLink>
