@@ -34,20 +34,18 @@ const Navbar = () => {
     >
       <Link to="/">
         <div className="flex justify-center items-center">
-          <div className="">
             <img
               src={Logo}
               alt="Logo"
-              className="h-[50px] w-[50px]"
+              className="h-[50px] pr-1 w-[50px]"
             />
-          </div>
-          <div className="text-white  text-lg ">
+          <div className="text-white  lg:text-lg ">
             <h2>TestKnock</h2>
           </div>
         </div>
       </Link>
       <div className="md:flex hidden">
-        <nav className="flex text-lg space-x-10 px-10">
+        <nav className="flex lg:text-lg space-x-10 px-10">
           <Link
             to="/"
             className={` whitespace-nowrap transition-all duration-200 hover:text-[#B47BFC] ${location.pathname === "/" && !isScrolled ? "text-[#B47BFC]" : "text-white"

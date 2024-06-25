@@ -89,7 +89,7 @@ const BurgerAndMenu = () => {
         <div />
         <div />
       </StyledBurger>
-      <StyledMenu className="max-lg:w-full text-2xl space-y-6" open={open}>
+      <StyledMenu className="max-lg:w-full text-2xl bg-black space-y-6" open={open}>
         <NavLink to="/" onClick={handleMenuClick}>
             Home
           </NavLink>
