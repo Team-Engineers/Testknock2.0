@@ -1,8 +1,11 @@
 import React from 'react'
+import OurTeamMain from '../components/OurTeam/OurTeamMain'
 
 const OurTeam = () => {
   return (
-    <div className='min-h-screen'>OurTeam</div>
+    <div>
+      <OurTeamMain/>
+    </div>
   )
 }
 
