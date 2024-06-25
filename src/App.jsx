@@ -29,11 +29,15 @@ function App() {
     };
   }, []);
   const withLayout = (Component) => (
-    <>
+    <div className="overflow-hidden">
+      <div className="relative z-[100]">
       <Navbar />
+      </div>
+      <div className="relative z-[10]">
       <Component />
+      </div>
       <Footer />
-    </>
+    </div>
   );
 
   return (
