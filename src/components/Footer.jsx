@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Logo from "../assets/images/logo.svg";
 
 const Footer = () => {
@@ -123,33 +123,33 @@ const Footer = () => {
                 Company
               </p>
               <ul className="mt-8 space-y-2 text-[80%] md:text-[100%]">
+                
                 <li>
-                  <p className="text-gray-400 transition hover:text-white whitespace-nowrap">
-                  Home
-                  </p>
-                </li>
-
-                <li>
-                  <p className="text-gray-400 transition hover:text-white whitespace-nowrap">
+                  <Link to="/services" className="text-gray-400 transition hover:text-white whitespace-nowrap">
                   Services
-                  </p>
+                  </Link>
+                </li>
+                <li>
+                  <Link to={"/career"} className="text-gray-400 transition hover:text-white whitespace-nowrap">
+                  Careers
+                  </Link>
                 </li>
 
                 <li>
-                  <p className="text-gray-400  transition hover:text-white whitespace-nowrap">
+                  <Link to="/our-products" className="text-gray-400  transition hover:text-white whitespace-nowrap">
                   Our Product
-                  </p>
+                  </Link>
                 </li>
 
                 <li>
-                  <p className="text-gray-400 transition  hover:text-white whitespace-nowrap">
+                  <Link to="/our_team" className="text-gray-400 transition  hover:text-white whitespace-nowrap">
                   Our Team
-                  </p>
+                  </Link>
                 </li>
                 <li>
-                  <p className="text-gray-400 transition  hover:text-white whitespace-nowrap">
+                  <Link to={"/about"} className="text-gray-400 transition  hover:text-white whitespace-nowrap">
                   About Us
-                  </p>
+                  </Link>
                 </li>
               </ul>
             </div>

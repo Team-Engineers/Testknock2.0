@@ -68,8 +68,8 @@ const Navbar = () => {
             Our Products
           </Link>
           <Link
-            to="/our-team"
-            className={`whitespace-nowrap transition-all duration-200 hover:text-[#B47BFC] ${location.pathname === "/our-team" && !isScrolled ? "text-[#B47BFC]" : "text-white"
+            to="/our_team"
+            className={`whitespace-nowrap transition-all duration-200 hover:text-[#B47BFC] ${location.pathname === "/our_team" && !isScrolled ? "text-[#B47BFC]" : "text-white"
               }`}
           >
             Our Team
