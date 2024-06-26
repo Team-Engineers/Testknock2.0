@@ -99,7 +99,7 @@ const BurgerAndMenu = () => {
           <NavLink to="/our-products" onClick={handleMenuClick}>
           Our Products
           </NavLink>
-          <NavLink to="/our-team" onClick={handleMenuClick}>
+          <NavLink to="/our_team" onClick={handleMenuClick}>
           Our Team
           </NavLink>
           <NavLink to="/about" onClick={handleMenuClick}>

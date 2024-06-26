@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import React, { useEffect } from 'react';
-
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Portfolio from "./pages/Portfolio";
@@ -11,6 +10,8 @@ import OurTeam from "./pages/OurTeam";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import OurProducts from "./pages/OurProducts";
+import TeamOverview from "./components/OurTeam/TeamOverview";
+import Career from "./pages/Career";
 
 function App() {
   useEffect(() => {
@@ -48,9 +49,12 @@ function App() {
         <Route path="portfolio/:website" element={withLayout(Portfolio)} />
         <Route path="/services" element={withLayout(Services)} />
         <Route path="/our-products" element={withLayout(OurProducts)} />
-        <Route path="/our-team" element={withLayout(OurTeam)} />
+        <Route path="/our_team" element={withLayout(OurTeam)} />
+        <Route path="/our_team/:name" element={<TeamOverview/>} />
         <Route path="/about" element={withLayout(About)} />
         <Route path="/contact" element={withLayout(Contact)} />
+        <Route path="/career" element={withLayout(Career)} />
+
       </Routes>
     </BrowserRouter>
   );
