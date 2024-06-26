@@ -1,8 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import Navbar from '../Navbar'
 import teams from '../../Constants/team'
 import Footer from '../Footer'
+import Navbar from '../Navbar'
 
 const TeamOverview = () => {
     const { name } = useParams();
@@ -34,32 +34,32 @@ const TeamOverview = () => {
             <div className='p-20 font-bold '>
                 <h >
                     <h1 className='text-4xl text-[#B47BFC]'>
-                        What made you think about Testknok?
+                        {teamMember.Questions1.testknock}
                     </h1>
-                    <p className='my-4 w-[70%] mb-10'>{teamMember.Questions.testknok}</p>
+                    <p className='my-4 w-[70%] mb-10'>{teamMember.Questions.testknock}</p>
                 </h>
                 <h>
                     <h1 className='text-4xl text-[#B47BFC]'>
-                        Best Lifehacks?
+                        {teamMember.Questions1.lifehacks}
                     </h1>
                     <p className='my-4 w-[70%] mb-10'>{teamMember.Questions.lifehacks}</p>
 
                 </h>
                 <h>
                     <h1 className='text-4xl text-[#B47BFC]'>
-                        What made you start coding?
+                        {teamMember.Questions1.startCoding}
                     </h1>
                     <p className='my-4 w-[70%] mb-10'>{teamMember.Questions.startCoding}</p>
 
                 </h>
                 <h>
                     <h1 className='text-4xl text-[#B47BFC]'>
-                        If you weren’t Coding, then what?
+                        {teamMember.Questions1.alternateCareer}
                     </h1>
                     <p className='my-4 w-[70%] mb-10'>{teamMember.Questions.alternateCareer}</p>
                 </h>
             </div>
-<Footer/>
+            <Footer />
         </div>
     )
 }
