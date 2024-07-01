@@ -4,29 +4,10 @@ import Logo from "../assets/images/logo.svg";
 import BurgerAndMenu from "./BurgerMenu";
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      if (scrollPosition > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [location.pathname]);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
-
 
   return (
     <header
@@ -37,7 +18,7 @@ const Navbar = () => {
             <img
               src={Logo}
               alt="Logo"
-              className="h-[50px] pr-1 w-[50px]"
+              className="sm:h-[50px] h-[40px] w-[40px] pr-1 sm:w-[50px]"
             />
           <div className="text-white  lg:text-lg ">
             <h2>TestKnock</h2>
@@ -45,38 +26,38 @@ const Navbar = () => {
         </div>
       </Link>
       <div className="md:flex hidden">
-        <nav className="flex lg:text-lg space-x-10 px-10">
+        <nav className="flex lg:text-lg max-lg:space-x-5 space-x-10 px-10">
           <Link
             to="/"
-            className={` whitespace-nowrap transition-all duration-200 hover:text-[#B47BFC] ${location.pathname === "/" && !isScrolled ? "text-[#B47BFC]" : "text-white"
+            className={` whitespace-nowrap transition-all duration-200 hover:text-[#B47BFC] ${location.pathname === "/"  ? "text-[#B47BFC]" : "text-white"
               }`}
           >
             Home
           </Link>
           <Link
             to="/services"
-            className={`whitespace-nowrap transition-all duration-200  hover:text-[#B47BFC] ${location.pathname === "/services" && !isScrolled ? "text-[#B47BFC]" : "text-white"
+            className={`whitespace-nowrap transition-all duration-200  hover:text-[#B47BFC] ${location.pathname === "/services"  ? "text-[#B47BFC]" : "text-white"
               }`}
           >
             Services
           </Link>
           <Link
             to="/our-products"
-            className={`whitespace-nowrap transition-all duration-200  hover:text-[#B47BFC] ${location.pathname === "/our-products" && !isScrolled ? "text-[#B47BFC]" : "text-white"
+            className={`whitespace-nowrap transition-all duration-200  hover:text-[#B47BFC] ${location.pathname === "/our-products"  ? "text-[#B47BFC]" : "text-white"
               }`}
           >
             Our Products
           </Link>
           <Link
             to="/our_team"
-            className={`whitespace-nowrap transition-all duration-200 hover:text-[#B47BFC] ${location.pathname === "/our_team" && !isScrolled ? "text-[#B47BFC]" : "text-white"
+            className={`whitespace-nowrap transition-all duration-200 hover:text-[#B47BFC] ${location.pathname === "/our_team"  ? "text-[#B47BFC]" : "text-white"
               }`}
           >
             Our Team
           </Link>
           <Link
             to="/about"
-            className={`whitespace-nowrap  transition-all duration-200 hover:text-[#B47BFC] ${location.pathname === "/about" && !isScrolled ? "text-[#B47BFC]" : "text-white"
+            className={`whitespace-nowrap  transition-all duration-200 hover:text-[#B47BFC] ${location.pathname === "/about"  ? "text-[#B47BFC]" : "text-white"
               }`}
           >
             About us
@@ -85,7 +66,7 @@ const Navbar = () => {
       </div>
       <Link
         to="/contact"
-        className={`max-md:hidden text-white hover:bg-gradient-to-r from-[#B47BFC] via-[#F181C7] to-[#FFA38C] border-white transition-all duration-200 border-2 px-5 p-1 rounded-[8px]  whitespace-nowrap hover:scale-105 ${location.pathname === "/contact" && !isScrolled ? "bg-gradient-to-r from-[#B47BFC] via-[#F181C7] to-[#FFA38C]" : ""
+        className={`max-md:hidden text-white hover:bg-gradient-to-r from-[#B47BFC] via-[#F181C7] to-[#FFA38C] border-white transition-all duration-200 border-2 px-5 p-1 rounded-[8px]  whitespace-nowrap hover:scale-105 ${location.pathname === "/contact"  ? "bg-gradient-to-r from-[#B47BFC] via-[#F181C7] to-[#FFA38C]" : ""
           }`}
       >
         Contact Us

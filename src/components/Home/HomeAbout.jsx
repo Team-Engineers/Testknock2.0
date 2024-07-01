@@ -3,13 +3,13 @@ import img from "../../assets/images/Home/whrv.png"
 const HomeAbout = () => {
     return (
         <div>
-            <div className='grid grid-cols-2  max-w-[1480px]  mx-auto gap-10 px-8'>
+            <div className='sm:grid sm:grid-cols-2 flex flex-col-reverse max-sm:text-center  max-w-[1480px]  mx-auto gap-10 px-5 md:px-8'>
                 <div className='border-[#6b6ba797]   border rounded-xl'>
-                    <img className='p-2 w-[50vw] h-[400px] object-cover  rounded-xl' src={img} alt="" />
+                    <img className='p-2 sm:w-[50vw]  sm:h-[400px] object-cover  rounded-xl' src={img} alt="" />
                 </div>
                 <div className='text-white'>
                     <h1 className='text-[#B47BFC] mb-10'>WHO ARE WE?</h1>
-                    <h1 className='mb-10'>
+                    <h1 className='mb-10 max-md:text-[14px] '>
                         We believe in fostering long-term partnerships with our clients.
                         We're more than just a service provider; we're your trusted tech
                         advisors. We'll work closely with you to understand your unique
@@ -17,7 +17,7 @@ const HomeAbout = () => {
                         development, content creation, UI/UX design, and end-to-end tech
                         solutions to deliver results that make a difference.
                     </h1>
-                    <button className='p-2 px-12 rounded-3xl bg-gradient-to-r from-[#B47BFC] via-[#F181C7] to-[#FFA38C]'>
+                    <button className='p-2 md:px-12 px-5 max-md:text-[14px] rounded-3xl bg-gradient-to-r from-[#B47BFC] via-[#F181C7] to-[#FFA38C]'>
                         Discover More
                     </button>
                 </div>

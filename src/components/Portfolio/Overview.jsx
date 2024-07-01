@@ -24,18 +24,18 @@ const Overview = () => {
     const cardData = cardData2.find((card) => card.title === website);
 
     return (
-        <div className="p-10 max-w-[1450px] mx-auto">
+        <div className="p-10 max-sm:px-5 max-w-[1450px] mx-auto">
             <div>
                 {cardData && (
                     <div>
-                       <h1 className="text-3xl mb-10 font-bold text-center text-[#EF81C9]">
+                       <h1 className="sm:text-3xl text-[25px] mb-10 font-bold text-center text-[#EF81C9]">
                         {cardData.website}
                        </h1>
-                       <div className="grid text-white gap-10 grid-cols-2 justify-center items-center">
+                       <div className="grid text-white gap-10 sm:grid-cols-2 justify-center items-center">
                         <div className='rounded-2xl  py-5 p-2 bg-[#1E1E20] border-1 border border-[#6b6ba797]'>
-                            <img className="w-[50vw] object-cover h-[250px]" src={cardData.image} alt="" />
+                            <img className="sm:w-[50vw] sm:object-cover sm:h-[250px]" src={cardData.image} alt="" />
                         </div>
-                        <div className=" xl:text-[22px] mt-2 2xl:text-2xl lg:text-xl flex flex-col  h-full gap-2">
+                        <div className=" xl:text-[22px] mt-2  max-sm:text-[14px]   2xl:text-2xl lg:text-xl flex flex-col  h-full gap-2">
                             <p className=" font-bold mb-10 ">{cardData.para1}</p>
                             <p className="">{cardData.para2}</p>
                         </div>

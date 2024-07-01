@@ -3,7 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledBurger = styled.button`
-  position: relative;
+  position: ${({ open }) => (open ? "fixed" : "")};
   display: flex;
   margin: auto 20px;
   flex-direction: column;
@@ -11,6 +11,8 @@ const StyledBurger = styled.button`
   width: 1.5rem;
   height: 1.5rem;
   opacity: 0.7;
+  top: 23px;
+  right: 0;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -48,7 +50,7 @@ const StyledMenu = styled.nav`
   height: 100vh;
   text-align: center;
   padding: 2rem;
-  position: absolute;
+  position: fixed;
   top: 0;
   background: #16192C;
 
@@ -79,6 +81,7 @@ const BurgerAndMenu = () => {
     setOpen(false);
   }, [location.pathname]);
 
+ 
   const handleMenuClick = () => {
     setOpen(!open);
   };
@@ -89,7 +92,7 @@ const BurgerAndMenu = () => {
         <div />
         <div />
       </StyledBurger>
-      <StyledMenu className="max-lg:w-full text-2xl bg-black space-y-6" open={open}>
+      <StyledMenu className="max-lg:w-full text-xl bg-black space-y-4" open={open}>
         <NavLink to="/" onClick={handleMenuClick}>
             Home
           </NavLink>

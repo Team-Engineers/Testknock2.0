@@ -1,8 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
+import Navbar from '../Navbar'
 import teams from '../../Constants/team'
 import Footer from '../Footer'
-import Navbar from '../Navbar'
 
 const TeamOverview = () => {
     const { name } = useParams();
@@ -22,44 +22,44 @@ const TeamOverview = () => {
         <div className='text-white min-h-screen'>
             <div className='bg-[#5454D4] '>
                 <Navbar />
-                <div className='h-[350px] relative items-end justify-center flex'>
-                    <img className='h-[330px]' src={teamMember.image} alt={teamMember.name} />
-                    <div className='p-4 left-4 font-bold space-y-5 absolute'>
-                        <p className=''>Since: {teamMember.since}</p>
-                        <h1 className='text-5xl text-[#0F071C]  mb-2 font-bold '>{teamMember.name}</h1>
-                        <p className='text-4xl '>{teamMember.position}</p>
+                <div className='sm:h-[350px] h-[220px] relative items-end justify-center flex'>
+                    <img className='sm:h-[330px] h-[200px]' src={teamMember.image} alt={teamMember.name} />
+                    <div className='sm:p-4 left-4 font-bold  sm:space-y-5 absolute'>
+                        <p className='max-sm:text-xs max-sm:mb-1 max-sm:text-[#0F071C]'>Since: {teamMember.since}</p>
+                        <h1 className='sm:text-5xl text-2xl sm:text-[#0F071C]   font-bold '>{teamMember.name}</h1>
+                        <p className='sm:text-4xl text-lg '>{teamMember.position}</p>
                     </div>
                 </div>
             </div>
-            <div className='p-20 font-bold '>
+            <div className='sm:p-20 p-4 font-bold '>
                 <h >
-                    <h1 className='text-4xl text-[#B47BFC]'>
-                        {teamMember.Questions1.testknock}
+                    <h1 className='sm:text-4xl text-2xl text-[#B47BFC]'>
+                    {teamMember.Questions1.testknock}
                     </h1>
-                    <p className='my-4 w-[70%] mb-10'>{teamMember.Questions.testknock}</p>
+                    <p className='my-4 sm:w-[70%] mb-10 max-sm:text-[14px]'>{teamMember.Questions.testknock}</p>
                 </h>
                 <h>
-                    <h1 className='text-4xl text-[#B47BFC]'>
-                        {teamMember.Questions1.lifehacks}
+                    <h1 className='sm:text-4xl text-2xl text-[#B47BFC]'>
+                    {teamMember.Questions1.lifehacks}
                     </h1>
-                    <p className='my-4 w-[70%] mb-10'>{teamMember.Questions.lifehacks}</p>
+                    <p className='my-4 sm:w-[70%] mb-10 max-sm:text-[14px]'>{teamMember.Questions.lifehacks}</p>
 
                 </h>
                 <h>
-                    <h1 className='text-4xl text-[#B47BFC]'>
-                        {teamMember.Questions1.startCoding}
+                    <h1 className='sm:text-4xl text-2xl text-[#B47BFC]'>
+                    {teamMember.Questions1.startCoding}
                     </h1>
-                    <p className='my-4 w-[70%] mb-10'>{teamMember.Questions.startCoding}</p>
+                    <p className='my-4 sm:w-[70%] mb-10 max-sm:text-[14px]'>{teamMember.Questions.startCoding}</p>
 
                 </h>
                 <h>
-                    <h1 className='text-4xl text-[#B47BFC]'>
-                        {teamMember.Questions1.alternateCareer}
+                    <h1 className='sm:text-4xl text-2xl text-[#B47BFC]'>
+                    {teamMember.Questions1.alternateCareer}
                     </h1>
-                    <p className='my-4 w-[70%] mb-10'>{teamMember.Questions.alternateCareer}</p>
+                    <p className='my-4 sm:w-[70%] mb-10 max-sm:text-[14px]'>{teamMember.Questions.alternateCareer}</p>
                 </h>
             </div>
-            <Footer />
+<Footer/>
         </div>
     )
 }

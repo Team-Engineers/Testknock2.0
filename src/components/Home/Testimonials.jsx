@@ -86,10 +86,10 @@ const Testimonials = ({ style }) => {
         }
       `}</style>
             <div className='text-center'>
-                <h1 className={`text-2xl text-[#B47BFC] font-bold mb-3 text-center  relative`}>
+                <h1 className={`sm:text-2xl text-[20px] text-[#B47BFC] font-bold sm:mb-3 mb-2 text-center  relative`}>
                     TESTIMONIAL
                 </h1>
-                <h1 className={`text-3xl text-white font-bold mb-10 text-center  relative`}>
+                <h1 className={`sm:text-3xl text-[22px] text-white font-bold mb-10 text-center  relative`}>
                     Client Feedback & Reviews
                 </h1>
             </div>
@@ -132,14 +132,14 @@ const Testimonials = ({ style }) => {
                         </div>
                     </SwiperSlide>
                 ))}
-                <div className=' md:hidden relative my-10 pb-10'>
+                {/* <div className=' md:hidden relative my-10 pb-10'>
                     <div className="swiper-button-prev  pl-10  ">
                         <FaChevronLeft />
                     </div>
                     <div className="swiper-button-next pr-10 ">
                         <FaChevronRight />
                     </div>
-                </div>
+                </div> */}
 
             </Swiper>
         </div>

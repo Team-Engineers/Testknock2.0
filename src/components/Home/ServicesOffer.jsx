@@ -36,7 +36,7 @@ const ServicesOffer = () => {
     return (
         <div className='my-20 max-w-[1500px] mx-auto relative'>
             <div>
-                <h1 className="text-6xl text-white font-bold text-center [font-family:'Houschka']">
+                <h1 className="text-6xl max-sm:leading-8 max-sm:text-[28px] text-white sm:font-bold text-center [font-family:'Houschka']">
                     The Service We Provide <br /> For You
                 </h1>
             </div>
@@ -51,7 +51,7 @@ const ServicesOffer = () => {
                     </div>
                 ))}
             </div>
-            <img className='absolute right-0 pr-10' src={circle} alt="" />
+            <img className='absolute right-0 md:pr-10' src={circle} alt="" />
         </div>
     )
 }
