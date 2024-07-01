@@ -31,16 +31,16 @@ const HomeContact = () => {
     };
 
     return (
-        <div className='max-w-[1480px] mx-auto pt-10 p-20'>
+        <div className='max-w-[1480px] mx-auto pt-10 max-sm:p-5 max-md:p-8 p-20'>
             <div className='text-white'>
-                <h1 className='text-7xl mb-4'>
+                <h1 className='sm:text-7xl text-4xl mb-4'>
                     Let’s talk
                 </h1>
-                <h1 className='text-lg'>
+                <h1 className='sm:text-lg text-[14px]'>
                     Our team consists of highly qualified specialists with international experience in the field of Web development, mobile development, Product management and design. We provide premium service at affordable prices and are always focused on the success of our clients.
                 </h1>
             </div>
-            <div className='grid gap-20 mt-10 grid-cols-2'>
+            <div className='grid gap-3 sm:gap-20 mt-10 sm:grid-cols-2'>
                 <div className='space-y-4'>
                     <div className='flex items-center gap-3 justify-center'>
                         <img className='w-[20px]' src={nameIcon} alt="" />
@@ -77,7 +77,7 @@ const HomeContact = () => {
                     </div>
                 </div>
                 <div className='h-full flex flex-col justify-between'>
-                    <div className='flex items-center gap-3 justify-center'>
+                    <div className='flex max-sm:pl-[32px] max-sm:mb-8 items-center gap-3 justify-center'>
                         <input
                             name="project"
                             placeholder='Tell us about your project.'
@@ -87,7 +87,7 @@ const HomeContact = () => {
                             onChange={handleInputChange}
                         />
                     </div>
-                    <div className='text-[#FF6333] flex gap-2 rounded-3xl border-[1.2px] w-fit p-1 px-3 border-[#FF6333] items-center'>
+                    <div className='text-[#FF6333] max-sm:ml-[32px] flex gap-2 rounded-3xl border-[1.2px] w-fit p-1 px-3 border-[#FF6333] items-center'>
                         <button onClick={handleSubmit}>Send</button>
                         <h1><RxArrowRight /></h1>
                     </div>

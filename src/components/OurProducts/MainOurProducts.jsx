@@ -1,139 +1,91 @@
 import React from 'react'
 import thapar from "../../assets/images/Home/Portfolio/thapar.gif"
 import cuet from "../../assets/images/Home/Portfolio/cuet.gif"
-import { Link } from 'react-router-dom'
-import { useEffect, useRef, useState } from 'react';
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
-import { Autoplay, Mousewheel, Navigation, Pagination } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/mousewheel';
-import 'swiper/css/navigation';
-import 'swiper/css/scrollbar';
-import 'swiper/css/pagination';
+import product from "../../assets/images/product.png"
+import { HiMiniArrowUpRight } from "react-icons/hi2";
 
+import { Link } from 'react-router-dom'
 const services = [
     {
         img: cuet,
-        website:"CUET-Testknock",
-        client:"Our Product",
-        date:"30 April 2024",
-        location:"New Delhi",
-        link: "cuet_testknock"
+        website: "CUET-Testknock",
+        website_link: "https://cuet.testknock.com/",
+        client: "CUET Platform for Students/School ",
+        date: "30 April 2024",
+        location: "New Delhi",
+        link: "cuet_testknock",
+        description: "Leveraging our expertise, we created a dynamic and interactive online learning platform for CUET-Testknock. This platform features intuitive navigation, a comprehensive question bank, and personalized learning paths, empowering students to excel in the CUET exam."
     },
     {
         img: thapar,
-        website:"TIET",
-        client:"Thapar Intitute",
-        date:"30 April 2023",
-        location:"New Delhi",
-        link: "thapar"
+        website: "Thapar Institute",
+        website_link: "https://thapar.testknock.com/",
+        client: "Thapar Institute for College students",
+        date: "30 April 2023",
+        location: "New Delhi",
+        link: "thapar",
+        description: "HungryBites approached us to create a mobile app that streamlined their food delivery service. The app included features like real-time order tracking, easy menu customization, and secure payment options, resulting in improved customer convenience and operational efficiency."
     }
 
 ];
 const MainOurProducts = () => {
 
-    const swiperRef = useRef(null);
-    const [slidesPerView, setSlidesPerView] = useState(1);
-
-    useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth >= 1024) {
-                setSlidesPerView(3);
-            } else if (window.innerWidth >= 768) {
-                setSlidesPerView(2);
-            } else if (window.innerWidth >= 550) {
-                setSlidesPerView(1);
-            } else {
-                setSlidesPerView(1);
-            }
-        };
-
-        handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
     return (
         <div>
-        <div className='min-h-[90vh] flex  mt-10 items-center overflow-hidden max-w-[1400px] mx-auto'>           
-            <div className='w-full '>
-                <style jsx>{`
-        .custom-pagination .swiper-pagination-bullet {
-          background-color: #B47BFC;
-          opacity: 0.5;
-          width: 10px; 
-          height: 10px; 
-          margin: 0 5px;
-        }
-        .custom-pagination .swiper-pagination-bullet-active {
-          background-color: #C77DEE;
-          opacity: 1;
-        }
-      `}</style>
-                 <div>
-                    <h1 className="text-5xl mb-14  text-white font-bold text-center  [font-family:'Houschka']">Our Products</h1>
-                </div>
-                <Swiper
-                    direction={'horizontal'}
-                    slidesPerView={slidesPerView}
-                    spaceBetween={30}
-                    mousewheel={{ invert: false, forceToAxis: true }}
-                    pagination={{ clickable: true, dynamicBullets: true, }}
-                    modules={[Mousewheel, Navigation, Autoplay, Pagination]}
-                    navigation={{
-                        prevEl: '.swiper-button-prev',
-                        nextEl: '.swiper-button-next',
-                    }}
-                    autoplay={{
-                        delay: 2500,
-                        disableOnInteraction: false,
-                    }}
-                    className="mySwiper custom-pagination pb-10 p-4"
-                    onSwiper={(swiper) => {
-                        swiperRef.current = swiper;
-                    }}
-                >
-                    {services.map((service, index) => (
-                        <SwiperSlide className='mr-4  py-5 rounded-md bg-gradient-t from-[#ffffff] to-[#0E041C] border-1 border border-[#6b6ba797]' key={index}>
-                            <Link to={`/portfolio/${service.link}`}>
-                            <div className='text-white p-2 px-4 pb-3 font-bold'>
-                            <h1 className='text-[#EF81C9] '>Website</h1>
-                            <h1 className='text-xl'>{service.website}</h1>
-                            </div>
-                            <div className=''>
-                                <img className=' md:w-[50vw] w-screen  h-[220px] ' src={service.img} alt="" />
-                            </div>
-                            <div className='grid grid-cols-2 justify-between w-full pt-4'>
-                            <div className='text-white p-2 px-4 pb-3 font-bold'>
-                            <h1 className='text-[#EF81C9] '>Client</h1>
-                            <h1 className='text-lg'>{service.client}</h1>
-                            </div>
-                            <div className='text-white p-2 px-4 pb-3 font-bold'>
-                            <h1 className='text-[#EF81C9] '>Date</h1>
-                            <h1 className='text-lg'>{service.date}</h1>
-                            </div>
-                            <div className='text-white p-2 px-4 pb-3 font-bold'>
-                            <h1 className='text-[#EF81C9] '>Location</h1>
-                            <h1 className='text-lg'>{service.location}</h1>
-                            </div>
-                            </div>
-                            </Link>
-                        </SwiperSlide>
-                    ))}
-                    <div className=' md:hidden relative my-10 pb-10'>
-                        <div className="swiper-button-prev  pl-10  ">
-                            <FaChevronLeft />
-                        </div>
-                        <div className="swiper-button-next pr-10 ">
-                            <FaChevronRight />
-                        </div>
+            <div className='min-h-[90vh] mb-20 flex   items-center overflow-hidden max-w-[1400px] mx-auto'>
+                <div className='w-full '>
+                    <div className='sm:h-[300px] h-[250px] flex border-y border-[#b2c28528] flex-col text-white justify-center items-center bg-[#0e0619]'>
+                        <img className='absolute  opacity-10 h-[300px] w-screen' src={product} alt="" />
+                        <h1 className="sm:text-4xl text-[30px] mb-2 text-center font-bold ">Our Works</h1>
+                        <h1 className='md:w-[60%] max-sm:text-[14px] w-[90%] text-center opacity-85'>Discover a portfolio of visually stunning and strategically crafted digital projects that showcase our creativity and expertise.</h1>
                     </div>
 
-                </Swiper>
+                    <div className='text-white p-4 sm:p-10  '>
+                        <h1 className='text-4xl max-sm:text-[30px] mb-2 font-bold'>
+                            At TestKnock
+                        </h1>
+                        <h1 className='opacity-80 max-sm:text-[13px] my-4'>
+                            We empower diverse clients with innovative digital solutions that propel their success.
+                        </h1>
+                        <h1 className='bg-[#262626] max-sm:text-[12px] w-fit mt-6 p-2 px-3 rounded-md'>
+                            Here are some examples of our notable works:
+                        </h1>
+                    </div>
+                    <div className='grid md:grid-cols-2'>
+                        {services.map((service, index) => (
+                            <div className=' py-5 border-separate border-e border-t border-[#b2c28528]' key={index}>
+                                <div to={`/portfolio/${service.link}`}>
+                                    <div className='text-[#98989A] border-b border-[#b2c28528] py-4 pb-8 px-5 sm:px-10 font-bold'>
+                                        <h1 className='text-xl max-sm:text-[5vw] max-lg:text-[18px] '>{service.client}</h1>
+                                    </div>
+                                    <div className=' rounded-3xl py-0 p-5 sm:p-10 '>
+                                        <Link to={`/portfolio/${service.link}`}>
+                                            <img className=' w-full  mx-auto rounded-lg sm:rounded-2xl m-10 h-[200px] sm:h-[300px] ' src={service.img} alt="" />
+                                        </Link>
+                                    </div>
+                                    <div className='sm:px-10 px-5 relative'>
+                                        <Link target='_blank' to={`${service.website_link}`}  >     
+                                        <h1 className='text-[#9EFF00] text-xl rounded-lg bg-[#262626] sm:mr-6  mr-2 sm:p-3 p-2 font-bold top-4 right-4 absolute '><HiMiniArrowUpRight/></h1>
+                                        </Link>
+                                        <div className='text-white  pb-3'>
+                                            <h1 className='text-lg  font-bold mb-4'>{service.website}</h1>
+                                            <Link target='_blank' to={`${service.website_link}`} className='bg-[#262626] text-[#98989A] w-fit max-sm:text-[14px]  p-2 px-3 rounded-md'>
+                                                {service.website_link}</Link>
+                                        </div>
+                                        <div className='text-[#98989A]  mt-5 '>
+                                            <h1 className='text-lg max-sm:text-[15px]'>{service.description}</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
 
+
+
+                </div>
             </div>
         </div>
-</div>
     )
 }
 
