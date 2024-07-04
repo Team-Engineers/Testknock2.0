@@ -21,14 +21,14 @@ const Footer = () => {
                   </div>
                   <div className="text-white font-sans font-medium text-lg ml-[-8%]">
                     <h2>
-                        TestKnock
+                      TestKnock
                     </h2>
                   </div>
                 </div>
               </NavLink>
             </div>
             <p className=" text-left sm:text-[100%] text-[16px] max-sm:font-thin hover:text-white  leading-relaxed text-white  sm:ml-[20px] sm:mr-[20px] ">
-            We believe in fostering long-term partnerships with our clients. We're more than just a service provider; we're your trusted tech advisors.
+              We believe in fostering long-term partnerships with our clients. We're more than just a service provider; we're your trusted tech advisors.
             </p>
           </div>
           <div className="grid grid-cols-2 sm:ml-10 gap-8 sm:grid-cols-3 md:grid-cols-3 lg:col-span-2">
@@ -38,49 +38,44 @@ const Footer = () => {
               </p>
               <ul className="mt-8 space-y-2 text-[80%] md:text-[100%]">
                 <li>
-                  <NavLink
+                  <div
                     className="text-gray-400 transition hover:text-white"
-                    to="/"
                   >
                     Web Development
-                  </NavLink>
+                  </div>
                 </li>
 
                 <li>
-                  <NavLink
+                  <div
                     className="text-gray-400 transition hover:text-white"
-                    to="/app"
                   >
                     App Development
-                  </NavLink>
+                  </div>
                 </li>
 
                 <li>
-                  <NavLink
+                  <div
                     className="text-gray-400 transition hover:text-white"
-                    to="/ui-ux"
                   >
                     UI/UX Designing
-                  </NavLink>
+                  </div>
                 </li>
 
                 <li>
-                  <NavLink
+                  <div
                     className="text-gray-400 transition hover:text-white"
-                    to="/content"
                   >
                     Content Creation
-                  </NavLink>
+                  </div>
                 </li>
                 <li>
-                  <NavLink
+                  <div
                     className="text-gray-400 transition hover:text-white"
-                    to="/tech-solution"
                   >
                     Tech Solution
-                  </NavLink>
+                  </div>
                 </li>
-                
+
               </ul>
             </div>
             <div className="text-left ">
@@ -90,31 +85,31 @@ const Footer = () => {
               <ul className="mt-8 space-y-2 text-[80%] md:text-[100%]">
                 <li>
                   <p className="text-gray-400 transition hover:text-white whitespace-nowrap">
-                  Help Center
+                    Help Center
                   </p>
                 </li>
 
                 <li>
                   <p className="text-gray-400 transition hover:text-white whitespace-nowrap">
-                  FAQ
+                    FAQ
                   </p>
                 </li>
 
                 <li>
                   <p className="text-gray-400  transition hover:text-white whitespace-nowrap">
-                  Technical Support
+                    Technical Support
                   </p>
                 </li>
 
                 <li>
                   <p className="text-gray-400 transition  hover:text-white whitespace-nowrap">
-                  Sales Support
+                    Sales Support
                   </p>
                 </li>
                 <li>
-                  <p className="text-gray-400 transition  hover:text-white whitespace-nowrap">
-                  Contact Us
-                  </p>
+                  <Link to="/contact" className="text-gray-400 transition  hover:text-white whitespace-nowrap">
+                    Contact Us
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -123,93 +118,93 @@ const Footer = () => {
                 Company
               </p>
               <ul className="mt-8 space-y-2 text-[80%] md:text-[100%]">
-                
+
                 <li>
                   <Link to="/services" className="text-gray-400 transition hover:text-white whitespace-nowrap">
-                  Services
+                    Services
                   </Link>
                 </li>
                 <li>
                   <Link to={"/career"} className="text-gray-400 transition hover:text-white whitespace-nowrap">
-                  Careers
+                    Careers
                   </Link>
                 </li>
 
                 <li>
                   <Link to="/our-products" className="text-gray-400  transition hover:text-white whitespace-nowrap">
-                  Our Product
+                    Our Product
                   </Link>
                 </li>
 
                 <li>
                   <Link to="/our_team" className="text-gray-400 transition  hover:text-white whitespace-nowrap">
-                  Our Team
+                    Our Team
                   </Link>
                 </li>
                 <li>
                   <Link to={"/about"} className="text-gray-400 transition  hover:text-white whitespace-nowrap">
-                  About Us
+                    About Us
                   </Link>
                 </li>
               </ul>
             </div>
             <div className="text-left sm:hidden mt-6">
-              
+
               <ul className="mt-8 space-y-2 text-[80%] md:text-[100%]">
-                
+
                 <li>
                   <Link to="/services" className="text-gray-400 transition hover:text-white whitespace-nowrap">
-                  Terms of Use
+                    Terms of Use
                   </Link>
                 </li>
                 <li>
                   <Link to={"/policy"} className="text-gray-400 transition hover:text-white whitespace-nowrap">
-                  Privacy Policy
+                    Privacy Policy
                   </Link>
                 </li>
 
                 <li>
                   <Link to="/cookie" className="text-gray-400  transition hover:text-white whitespace-nowrap">
-                  Cookie Policy
+                    Cookie Policy
                   </Link>
                 </li>
 
-               
+
               </ul>
             </div>
           </div>
         </div>
-        </div>
-        <div className=" my-5 max-w-[1500px] font-bold mx-auto px-[50px] ">
-          <div className="text-center sm:flex justify-between sm:text-left">
-            <p className="flex max-sm:hidden sm:flex-row flex-col  gap-[10px] max-md:justify-center  md:text-[100%] text-[90%] ">
-              <NavLink
-                className="whitespace-nowrap text-gray-400   transition "
-                to="/"
-              >
-                Terms of use
-              </NavLink>
-              <NavLink
-                className="whitespace-nowrap text-gray-400   transition "
-                to="/"
-              >
-                Privacy Policy
-              </NavLink>
-              <NavLink
-                className="whitespace-nowrap text-gray-400   transition "
-                to="/"
-              >
-                Cookie Policy
-              </NavLink>
-            </p>
-            <p className="mt-4 max-sm:flex justify-center text-center max-sm:gap-5 whitespace-nowrap max-sm:text-[12px] text-[90%] md:text-[100%] font-medium  text-gray-400 sm:order-first sm:mt-0">
-              &copy; {updatedDate} TestKnock <p className="block text-gray-400 sm:inline">
+      </div>
+      <div className=" my-5 max-w-[1500px] font-bold mx-auto px-[50px] ">
+        <div className="text-center sm:flex justify-between sm:text-left">
+          <p className="flex max-sm:hidden sm:flex-row flex-col  gap-[10px] max-md:justify-center  md:text-[100%] text-[90%] ">
+            <NavLink
+              className="whitespace-nowrap text-gray-400   transition "
+              to="/"
+            >
+              Terms of use
+            </NavLink>
+            <NavLink
+              className="whitespace-nowrap text-gray-400   transition "
+              to="/"
+            >
+              Privacy Policy
+            </NavLink>
+            <NavLink
+              className="whitespace-nowrap text-gray-400   transition "
+              to="/"
+            >
+              Cookie Policy
+            </NavLink>
+          </p>
+          <p className="mt-4 max-sm:flex justify-center text-center max-sm:gap-5 whitespace-nowrap max-sm:text-[12px] text-[90%] md:text-[100%] font-medium  text-gray-400 sm:order-first sm:mt-0">
+            &copy; {updatedDate} TestKnock <p className="block text-gray-400 sm:inline">
               All rights reserved.
             </p>
-            </p>
-          </div>
+          </p>
         </div>
-     
+      </div>
+
     </footer>
   );
 };

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import img from "../../assets/images/Home/whrv.png"
 const HomeAbout = () => {
     return (
@@ -17,9 +18,9 @@ const HomeAbout = () => {
                         development, content creation, UI/UX design, and end-to-end tech
                         solutions to deliver results that make a difference.
                     </h1>
-                    <button className='p-2 md:px-12 px-5 max-md:text-[14px] rounded-3xl bg-gradient-to-r from-[#B47BFC] via-[#F181C7] to-[#FFA38C]'>
+                    <Link to="/about" className='p-2 md:px-12 px-5 max-md:text-[14px] rounded-3xl bg-gradient-to-r from-[#B47BFC] via-[#F181C7] to-[#FFA38C]'>
                         Discover More
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>
