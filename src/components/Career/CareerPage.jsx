@@ -208,7 +208,7 @@ const CareerPage = () => {
                     value={formData.message} 
                     onChange={handleInputChange} 
                 />
-                {!notification &&
+                
                 <button 
                     type="submit" 
                     className='hover:bg-gradient-to-r from-[#B47BFC] via-[#F181C7] to-[#FFA38C] font-bold hover:scale-105 transition-all duration-200 text-white border border-white rounded-md max-sm:text-[13px] p-2 px-10 mt-10 sm:mt-20'
@@ -216,7 +216,7 @@ const CareerPage = () => {
                 >
                     {isLoading ? 'Submitting...' : 'Submit'}
                 </button>
-}
+
                 
                 {notification && <p className='text-green-500 mt-10'>{notification}</p>}
 
