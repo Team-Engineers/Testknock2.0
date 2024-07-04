@@ -1,10 +1,10 @@
-import React from 'react'
-import thapar from "../../assets/images/Home/Portfolio/thapar.gif"
-import cuet from "../../assets/images/Home/Portfolio/cuet.gif"
-import product from "../../assets/images/product.png"
+import React from 'react';
 import { HiMiniArrowUpRight } from "react-icons/hi2";
+import cuet from "../../assets/images/Home/Portfolio/cuet.gif";
+import thapar from "../../assets/images/Home/Portfolio/thapar.gif";
+import product from "../../assets/images/product.png";
 
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 const services = [
     {
         img: cuet,
@@ -20,7 +20,7 @@ const services = [
         img: thapar,
         website: "Thapar Institute",
         website_link: "https://thapar.testknock.com/",
-        client: "Thapar Institute for College students",
+        client: "Thapar Dashboard for College students",
         date: "30 April 2023",
         location: "New Delhi",
         link: "thapar",
@@ -64,8 +64,8 @@ const MainOurProducts = () => {
                                         </Link>
                                     </div>
                                     <div className='sm:px-10 px-5 relative'>
-                                        <Link target='_blank' to={`${service.website_link}`}  >     
-                                        <h1 className='text-[#9EFF00] text-xl rounded-lg bg-[#262626] sm:mr-6  mr-2 sm:p-3 p-2 font-bold top-4 right-4 absolute '><HiMiniArrowUpRight/></h1>
+                                        <Link target='_blank' to={`${service.website_link}`}  >
+                                            <h1 className='text-[#9EFF00] text-xl rounded-lg bg-[#262626] sm:mr-6  mr-2 sm:p-3 p-2 font-bold top-4 right-4 absolute '><HiMiniArrowUpRight /></h1>
                                         </Link>
                                         <div className='text-white  pb-3'>
                                             <h1 className='text-lg  font-bold mb-4'>{service.website}</h1>

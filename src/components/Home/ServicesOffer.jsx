@@ -9,7 +9,7 @@ const services = [
     {
         icon: dev,
         title: "Development",
-        description: "Create a platform with the best and coolest quality from us.",
+        description: "Create a Web/App platform with the best and coolest quality from us.",
         bgColor: "bg-[#5454d43c]"
     },
     {

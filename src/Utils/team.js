@@ -3,6 +3,7 @@ import Founder from "../assets/images/Team/Founder.svg";
 import Devendra from "../assets/images/Team/devendra.png";
 import Nitya from "../assets/images/Team/nitya.png";
 import Subroto from "../assets/images/Team/subroto.png";
+import Yojana from "../assets/images/Team/yojana.png";
 
 const teams = [
   {
@@ -34,6 +35,29 @@ const teams = [
     since: "2023",
     image: Nitya,
     icon: Founder,
+    Questions1: {
+      testknock: "Why did you choose field of software development?",
+      lifehacks: "Best Lifehacks?",
+      startCoding: "What made you start coding?",
+      alternateCareer: "If you weren’t Coding, then what?",
+    },
+    Questions: {
+      testknock:
+        "I chose software development because I heard there would be free coffee and snacks and I wanted to turn my caffeine addiction into a career. Also, because 'professional napper' wasn’t an option.",
+      lifehacks:
+        "My favorite lifehack is to sleep if any problem persists for long.",
+      startCoding:
+        "My journey into coding began when I realized how much technology impacts our daily lives. I wanted to be part of that impact, to create tools that make people's lives easier.",
+      alternateCareer:
+        "If not for coding, I'd likely be in painting or writing. I'm fascinated by art.",
+    },
+  },
+  {
+    name: "Yojana Tripathi",
+    position: "Software Developer",
+    since: "2023",
+    image: Yojana,
+    icon: Designer,
     Questions1: {
       testknock: "Why did you choose field of software development?",
       lifehacks: "Best Lifehacks?",

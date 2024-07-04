@@ -1,8 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import Navbar from '../Navbar'
-import teams from '../../Constants/team'
+import teams from '../../Utils/team'
 import Footer from '../Footer'
+import Navbar from '../Navbar'
 
 const TeamOverview = () => {
     const { name } = useParams();
@@ -34,32 +34,32 @@ const TeamOverview = () => {
             <div className='sm:p-20 p-4 font-bold '>
                 <h >
                     <h1 className='sm:text-4xl text-2xl text-[#B47BFC]'>
-                    {teamMember.Questions1.testknock}
+                        {teamMember.Questions1.testknock}
                     </h1>
                     <p className='my-4 sm:w-[70%] mb-10 max-sm:text-[14px]'>{teamMember.Questions.testknock}</p>
                 </h>
                 <h>
                     <h1 className='sm:text-4xl text-2xl text-[#B47BFC]'>
-                    {teamMember.Questions1.lifehacks}
+                        {teamMember.Questions1.lifehacks}
                     </h1>
                     <p className='my-4 sm:w-[70%] mb-10 max-sm:text-[14px]'>{teamMember.Questions.lifehacks}</p>
 
                 </h>
                 <h>
                     <h1 className='sm:text-4xl text-2xl text-[#B47BFC]'>
-                    {teamMember.Questions1.startCoding}
+                        {teamMember.Questions1.startCoding}
                     </h1>
                     <p className='my-4 sm:w-[70%] mb-10 max-sm:text-[14px]'>{teamMember.Questions.startCoding}</p>
 
                 </h>
                 <h>
                     <h1 className='sm:text-4xl text-2xl text-[#B47BFC]'>
-                    {teamMember.Questions1.alternateCareer}
+                        {teamMember.Questions1.alternateCareer}
                     </h1>
                     <p className='my-4 sm:w-[70%] mb-10 max-sm:text-[14px]'>{teamMember.Questions.alternateCareer}</p>
                 </h>
             </div>
-<Footer/>
+            <Footer />
         </div>
     )
 }

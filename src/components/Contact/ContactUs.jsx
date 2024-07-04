@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import facebookIcon from "../../assets/images/Contact/facebook.svg";
-import instagramIcon from "../../assets/images/Contact/instagram.svg";
-import linkedinIcon from "../../assets/images/Contact/linkedIn.svg";
-import twitterIcon from "../../assets/images/Contact/google.svg";
+import { GoMail } from "react-icons/go";
+import { MdOutlineLocalPhone } from "react-icons/md";
 import { RxArrowRight } from "react-icons/rx";
 import { SlLocationPin } from "react-icons/sl";
-import { MdOutlineLocalPhone } from "react-icons/md";
-import { GoMail } from "react-icons/go";
+import facebookIcon from "../../assets/images/Contact/facebook.svg";
+import twitterIcon from "../../assets/images/Contact/google.svg";
+import instagramIcon from "../../assets/images/Contact/instagram.svg";
+import linkedinIcon from "../../assets/images/Contact/linkedIn.svg";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -27,10 +27,10 @@ const ContactUs = () => {
   const handleSubmit = () => {
     console.log("Submitted:", formData);
     setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
+      name: '',
+      email: '',
+      phone: '',
+      message: ''
     });
   };
 
@@ -141,18 +141,21 @@ const ContactUs = () => {
           </div>
           <div className="flex gap-2 items-center">
             <div className="gap-3 flex flex-row py-2">
-              <div>
+              <a>
                 <img className="w-7 h-7 cursor-pointer" src={facebookIcon} />
-              </div>
-              <div>
+              </a>
+              <a href="https://www.instagram.com/testknock05/" target="_blank"
+                rel="noreferrer">
                 <img className="w-7 h-7 cursor-pointer" src={instagramIcon} />
-              </div>
-              <div>
+              </a>
+              <a href="https://www.linkedin.com/company/testknock/" target="_blank"
+                rel="noreferrer">
                 <img className="w-7 h-7 cursor-pointer" src={linkedinIcon} />
-              </div>
-              <div>
+              </a>
+              <a href="https://x.com/testknock/" target="_blank"
+                rel="noreferrer" >
                 <img className="w-7 h-7 cursor-pointer" src={twitterIcon} />
-              </div>
+              </a>
             </div>
           </div>
         </div>
