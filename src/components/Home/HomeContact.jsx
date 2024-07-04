@@ -11,7 +11,8 @@ const HomeContact = () => {
         name: '',
         email: '',
         phoneNumber: '',
-        reason: ''
+        reason: '',
+        website:'TestKnock'
     });
 
     const [errors, setErrors] = useState({
@@ -56,6 +57,9 @@ const HomeContact = () => {
         if (!formData.phoneNumber) {
             newErrors.phoneNumber = 'Phone number is required';
             isValid = false;
+        } else if (formData.phoneNumber.length !== 10 || !/^\d+$/.test(formData.phoneNumber)) {
+            newErrors.phoneNumber = 'Phone number is not Valid';
+            isValid = false;
         }
         if (!formData.reason) {
             newErrors.reason = 'Project Details is required';
@@ -78,6 +82,9 @@ const HomeContact = () => {
                     reason: ''
                 });
                 setNotification('Details submitted successfully!');
+                setTimeout(() => {
+                    window.location.reload();
+                }, 3000);
             } catch (error) {
                 console.error("Error submitting form:", error);
                 setNotification('Error submitting details. Please try again.');
