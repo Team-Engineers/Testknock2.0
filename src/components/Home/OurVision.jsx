@@ -1,10 +1,12 @@
 import React from 'react'
 import background from "../../assets/images/Home/Vision/background.png"
 import { BsArrowUpRight } from "react-icons/bs";
+import background2 from "../../assets/images/visionvector.png"
 
 const OurVision = () => {
     return (
         <div>
+            <img className='absolute w-screen' src={background2} alt="" />
             <div className='grid max-w-[1480px] pt-10 mx-auto mb-20  sm:grid-cols-2 gap-5 px-5'>
                 <div className='text-white '>
                     <div className='relative '>
