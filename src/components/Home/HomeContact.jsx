@@ -12,7 +12,7 @@ const HomeContact = () => {
         email: '',
         phoneNumber: '',
         reason: '',
-        website:'TestKnock'
+        website: 'TestKnock'
     });
 
     const [errors, setErrors] = useState({
@@ -50,10 +50,16 @@ const HomeContact = () => {
             newErrors.name = 'Name is required';
             isValid = false;
         }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!formData.email) {
             newErrors.email = 'Email is required';
             isValid = false;
+        } else if (!emailRegex.test(formData.email)) {
+            newErrors.email = 'Email is not valid';
+            isValid = false;
         }
+
         if (!formData.phoneNumber) {
             newErrors.phoneNumber = 'Phone number is required';
             isValid = false;
@@ -61,8 +67,9 @@ const HomeContact = () => {
             newErrors.phoneNumber = 'Phone number is not Valid';
             isValid = false;
         }
+
         if (!formData.reason) {
-            newErrors.reason = 'Project Details is required';
+            newErrors.reason = 'Project Details are required';
             isValid = false;
         }
 
