@@ -64,7 +64,7 @@ const HomeContact = () => {
             newErrors.phoneNumber = 'Phone number is required';
             isValid = false;
         } else if (formData.phoneNumber.length !== 10 || !/^\d+$/.test(formData.phoneNumber)) {
-            newErrors.phoneNumber = 'Phone number is not valid';
+            newErrors.phoneNumber = 'Phone number is not Valid';
             isValid = false;
         }
 

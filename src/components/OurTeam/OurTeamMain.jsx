@@ -6,7 +6,7 @@ const OurTeamMain = () => {
     return (
         <div className=' text-white min-h-[90vh] px-5 sm:px-10 max-w-[1280px] mx-auto items-center grid '>
             <div className=''>
-                <h1 className='text-white  text-center text-3xl md:text-4xl font-bold'>
+                <h1 className='text-white my-10 mb-14 text-center text-3xl md:text-4xl font-bold'>
                     Our Team
                 </h1>
             </div>

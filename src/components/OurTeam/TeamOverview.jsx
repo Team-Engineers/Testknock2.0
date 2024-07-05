@@ -21,8 +21,10 @@ const TeamOverview = () => {
     return (
         <div className='text-white min-h-screen'>
             <div className='bg-[#5454D4] '>
+                <div className='relative z-10'>
                 <Navbar />
-                <div className='sm:h-[350px] h-[220px] relative items-end justify-center flex'>
+                </div>
+                <div className='sm:h-[350px]  z-0 h-[220px] relative items-end justify-center flex'>
                     <img className='sm:h-[330px] h-[200px]' src={teamMember.image} alt={teamMember.name} />
                     <div className='sm:p-4 left-4 font-bold  sm:space-y-5 absolute'>
                         <p className='max-sm:text-xs max-sm:mb-1 max-sm:text-[#0F071C]'>Since: {teamMember.since}</p>
