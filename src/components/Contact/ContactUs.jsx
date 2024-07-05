@@ -1,8 +1,10 @@
+import axios from 'axios';
 import React, { useState } from "react";
 import { GoMail } from "react-icons/go";
 import { MdOutlineLocalPhone } from "react-icons/md";
 import { RxArrowRight } from "react-icons/rx";
 import { SlLocationPin } from "react-icons/sl";
+import { API } from "../../Utils/constants";
 import facebookIcon from "../../assets/images/Contact/facebook.svg";
 import twitterIcon from "../../assets/images/Contact/google.svg";
 import instagramIcon from "../../assets/images/Contact/instagram.svg";
@@ -12,9 +14,19 @@ const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
-    message: ''
+    phoneNumber: '',
+    reason: '',
+    website: 'TestKnock'
   });
+
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    phoneNumber: '',
+    reason: ''
+  });
+
+  const [notification, setNotification] = useState('');
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -22,16 +34,68 @@ const ContactUs = () => {
       ...prevFormData,
       [name]: value
     }));
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: ''
+    }));
+    setNotification('');
   };
 
-  const handleSubmit = () => {
-    console.log("Submitted:", formData);
-    setFormData({
+  const validateForm = () => {
+    const newErrors = {
       name: '',
       email: '',
-      phone: '',
-      message: ''
-    });
+      phoneNumber: '',
+      reason: ''
+    };
+    let isValid = true;
+
+    if (!formData.name) {
+      newErrors.name = 'Name is required';
+      isValid = false;
+    }
+    if (!formData.email) {
+      newErrors.email = 'Email is required';
+      isValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Email is not valid';
+      isValid = false;
+    }
+    if (!formData.phoneNumber) {
+      newErrors.phoneNumber = 'Phone number is required';
+      isValid = false;
+    } else if (formData.phoneNumber.length !== 10 || !/^\d+$/.test(formData.phoneNumber)) {
+      newErrors.phoneNumber = 'Phone number is not valid';
+      isValid = false;
+    }
+    if (!formData.reason) {
+      newErrors.reason = 'Message is required';
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
+  const handleSubmit = async () => {
+    if (validateForm()) {
+      try {
+        const response = await axios.post(`${API}/contact/submit`, formData);
+        setFormData({
+          name: '',
+          email: '',
+          phoneNumber: '',
+          reason: ''
+        });
+        setNotification('Details submitted successfully!');
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        setNotification('Error submitting details. Please try again.');
+      }
+    }
   };
 
   const mapUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14008.013437802437!2d77.21783243081936!3d28.63010902426457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd317b7b6db1%3A0xfb8a939428a4d433!2sKanchanjunga%20Building%2C%20Barakhamba%20Rd%2C%20Fire%20Brigade%20Lane%2C%20Barakhamba%2C%20New%20Delhi%2C%20Delhi%20110001%2C%20India!5e0!3m2!1sen!2sus!4v1716054881079!5m2!1sen!2sin&style=element:geometry%7Ccolor:0x242f3e&style=element:labels.text.stroke%7Ccolor:0x242f3e&style=element:labels.text.fill%7Ccolor:0x746855&style=feature:administrative.locality%7Celement:labels.text.fill%7Ccolor:0xd59563&style=feature:poi%7Celement:labels.text.fill%7Ccolor:0xd59563&style=feature:poi.park%7Celement:geometry%7Ccolor:0x263c3f&style=feature:poi.park%7Celement:labels.text.fill%7Ccolor:0x6b9a76&style=feature:road%7Celement:geometry%7Ccolor:0x38414e&style=feature:road%7Celement:geometry.stroke%7Ccolor:0x212a37&style=feature:road%7Celement:labels.text.fill%7Ccolor:0x9ca5b3&style=feature:road.highway%7Celement:geometry%7Ccolor:0x746855&style=feature:road.highway%7Celement:geometry.stroke%7Ccolor:0x1f2835&style=feature:road.highway%7Celement:labels.text.fill%7Ccolor:0xf3d19c&style=feature:transit%7Celement:geometry%7Ccolor:0x2f3948&style=feature:transit.station%7Celement:labels.text.fill%7Ccolor:0xd59563&style=feature:water%7Celement:geometry%7Ccolor:0x17263c&style=feature:water%7Celement:labels.text.fill%7Ccolor:0x515c6d&style=feature:water%7Celement:labels.text.stroke%7Ccolor:0x17263c`;
@@ -57,41 +121,54 @@ const ContactUs = () => {
               Feel free to ask them anytime
             </h1>
           </div>
-          <input
-            name="name"
-            placeholder="Name"
-            className="focus:outline-none text-white pl-0 p-2 bg-transparent border-b-2 border-white w-full"
-            type="text"
-            value={formData.name}
-            onChange={handleInputChange}
-          />
-          <input
-            name="email"
-            placeholder="Email"
-            className="focus:outline-none text-white pl-0 p-2 bg-transparent border-b-2 border-white w-full"
-            type="text"
-            value={formData.email}
-            onChange={handleInputChange}
-          />
-          <input
-            name="phone"
-            placeholder="Phone Number"
-            className="focus:outline-none text-white pl-0 p-2 bg-transparent border-b-2 border-white w-full"
-            type="text"
-            value={formData.phone}
-            onChange={handleInputChange}
-          />
-          <input
-            name="message"
-            placeholder="Message"
-            className="focus:outline-none text-white pl-0 p-2 bg-transparent border-b-2 border-white w-full"
-            type="text"
-            value={formData.message}
-            onChange={handleInputChange}
-          />
+          <div>
+            <input
+              name="name"
+              placeholder="Name"
+              className="focus:outline-none text-white pl-0 p-2 bg-transparent border-b-2 border-white w-full"
+              type="text"
+              value={formData.name}
+              onChange={handleInputChange}
+            />
+            {errors.name && <small className="text-red-500">{errors.name}</small>}
+          </div>
+          <div>
+            <input
+              name="email"
+              placeholder="Email"
+              className="focus:outline-none text-white pl-0 p-2 bg-transparent border-b-2 border-white w-full"
+              type="text"
+              value={formData.email}
+              onChange={handleInputChange}
+            />
+            {errors.email && <small className="text-red-500">{errors.email}</small>}
+          </div>
+          <div>
+            <input
+              name="phoneNumber"
+              placeholder="Phone Number"
+              className="focus:outline-none text-white pl-0 p-2 bg-transparent border-b-2 border-white w-full"
+              type="text"
+              value={formData.phoneNumber}
+              onChange={handleInputChange}
+            />
+            {errors.phoneNumber && <small className="text-red-500">{errors.phoneNumber}</small>}
+          </div>
+          <div>
+            <input
+              name="reason"
+              placeholder="Message"
+              className="focus:outline-none text-white pl-0 p-2 bg-transparent border-b-2 border-white w-full"
+              type="text"
+              value={formData.reason}
+              onChange={handleInputChange}
+            />
+            {errors.reason && <small className="text-red-500">{errors.reason}</small>}
+          </div>
           <button className="flex gap-2 justify-start items-center" onClick={handleSubmit}>
             Send Message <RxArrowRight />
           </button>
+          {notification && <p className='text-green-500 mt-4'>{notification}</p>}
         </div>
       </div>
       <div className="sm:gap-5 gap-[4vw] md:pl-5 grid w-[99%] mx-auto justify-center  grid-cols-2 max-sm:text-[11px] md:flex">
