@@ -11,7 +11,8 @@ const HomeContact = () => {
         name: '',
         email: '',
         phoneNumber: '',
-        reason: ''
+        reason: '',
+        website: 'TestKnock'
     });
 
     const [errors, setErrors] = useState({
@@ -49,16 +50,26 @@ const HomeContact = () => {
             newErrors.name = 'Name is required';
             isValid = false;
         }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!formData.email) {
             newErrors.email = 'Email is required';
             isValid = false;
+        } else if (!emailRegex.test(formData.email)) {
+            newErrors.email = 'Email is not valid';
+            isValid = false;
         }
+
         if (!formData.phoneNumber) {
             newErrors.phoneNumber = 'Phone number is required';
             isValid = false;
+        } else if (formData.phoneNumber.length !== 10 || !/^\d+$/.test(formData.phoneNumber)) {
+            newErrors.phoneNumber = 'Phone number is not valid';
+            isValid = false;
         }
+
         if (!formData.reason) {
-            newErrors.reason = 'Project Details is required';
+            newErrors.reason = 'Project Details are required';
             isValid = false;
         }
 
@@ -78,6 +89,9 @@ const HomeContact = () => {
                     reason: ''
                 });
                 setNotification('Details submitted successfully!');
+                setTimeout(() => {
+                    window.location.reload();
+                }, 3000);
             } catch (error) {
                 console.error("Error submitting form:", error);
                 setNotification('Error submitting details. Please try again.');
